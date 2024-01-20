@@ -9,6 +9,7 @@ import { useMain } from "./context/main-context";
 
 function App() {
   const { booleanValue } = useMain();
+
   return (
     <div className="background">
       <HomeNavBar />
