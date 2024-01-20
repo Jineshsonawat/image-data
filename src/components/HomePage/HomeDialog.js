@@ -11,7 +11,7 @@ const searchKeywords = [
   "Marketing",
 ];
 function ShowDialog() {
-  const { imageDataFromApi, loader } = useMain();
+  const { imageDataFromApi, loader, clickToViewDetails } = useMain();
 
   if (loader === "loading") {
     return (
@@ -21,14 +21,21 @@ function ShowDialog() {
     if (imageDataFromApi.length > 0) {
       return (
         <>
-          <div className="dialog-section flex-container-row flex-wrap row-gap-20 column-gap-40">
-            {imageDataFromApi.map(({ id, previewURL, tags }) => {
+          <div className="dialog-section flex-container-row flex-wrap row-gap-20 column-gap-45">
+            {imageDataFromApi.map((item) => {
+              const { previewURL, tags } = item;
               const tagValue = tags.split(",");
 
               return (
                 <>
                   <div>
-                    <img src={previewURL} alt="" className="dialog-image"></img>
+                    <div onClick={() => clickToViewDetails(item)}>
+                      <img
+                        src={previewURL}
+                        alt=""
+                        className="small-dialog-image"
+                      ></img>
+                    </div>
                     <div className="flex-container-row flex-wrap font-weight-400 font-13 column-gap-10 tags">
                       {tagValue.map((value) => {
                         return (

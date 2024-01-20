@@ -9,6 +9,13 @@ function MainProvider({ children }) {
   const [showUserValue, setShowUserValue] = useState("");
   const [imageDataFromApi, setImageDataFromApi] = useState([]);
   const [loader, showLoader] = useState("");
+  const [valueToShowDialog, setValueToShowDialog] = useState(false);
+  const [imageDetail, setImageDetail] = useState({});
+
+  function clickToViewDetails(item) {
+    setValueToShowDialog(!valueToShowDialog);
+    setImageDetail({ ...item });
+  }
 
   function onClickSearchButton() {
     showLoader("loading");
@@ -23,7 +30,6 @@ function MainProvider({ children }) {
       `&q=${userValue}` +
       `&per_page=6`;
 
-    console.log(url);
     try {
       fetch(url)
         .then((res) => res.json())
@@ -53,6 +59,9 @@ function MainProvider({ children }) {
         showUserValue,
         imageDataFromApi,
         loader,
+        clickToViewDetails,
+        valueToShowDialog,
+        imageDetail,
       }}
     >
       {children}
