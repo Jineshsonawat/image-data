@@ -17,6 +17,10 @@ function MainProvider({ children }) {
     setImageDetail({ ...item });
   }
 
+  function handleKeywordClick(event) {
+    setUserValue(event.target.innerHTML);
+  }
+
   function onClickSearchButton() {
     showLoader("loading");
     setBooleanValue(false);
@@ -62,6 +66,7 @@ function MainProvider({ children }) {
         clickToViewDetails,
         valueToShowDialog,
         imageDetail,
+        handleKeywordClick,
       }}
     >
       {children}

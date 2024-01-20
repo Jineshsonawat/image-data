@@ -13,13 +13,15 @@ function App() {
 
   return (
     <div className="background">
-      {valueToShowDialog && <ImageDetailDialog />}
-      <HomeNavBar />
-      {booleanValue && <HomeHeading />}
-      <HomeSearchBar />
-      {booleanValue && <HomeSuggestion />}
-      {!booleanValue && <ResultStatus />}
-      {!booleanValue && <HomeDialog />}
+      <div>
+        {valueToShowDialog && <ImageDetailDialog />}
+        <HomeNavBar />
+        {booleanValue && <HomeHeading />}
+        <HomeSearchBar />
+        {booleanValue && <HomeSuggestion />}
+        {!booleanValue && <ResultStatus />}
+      </div>
+      <div>{!booleanValue && <HomeDialog />}</div>
     </div>
   );
 }

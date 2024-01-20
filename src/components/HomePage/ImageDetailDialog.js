@@ -1,10 +1,14 @@
+import { useState } from "react";
 import { useMain } from "../../context/main-context";
 
 function ImageDetailDialog() {
   const { clickToViewDetails, imageDetail } = useMain();
+  const [selectedSize, setSelectedSize] = useState(null);
+
   const {
     id,
     largeImageURL,
+    previewURL,
     tags,
     user,
     user_id,
@@ -13,7 +17,18 @@ function ImageDetailDialog() {
     likes,
     downloads,
   } = imageDetail;
+
   const tagValue = tags.split(",");
+
+  function handleCheckBoxChange(size) {
+    if (selectedSize === size) {
+      setSelectedSize(null);
+    } else {
+      setSelectedSize(size);
+    }
+  }
+
+  function handleDownload() {}
 
   return (
     <>
@@ -44,7 +59,15 @@ function ImageDetailDialog() {
                       </p>
                       <p className="font-weight-700 font-13">640x960</p>
 
-                      <input type="checkbox" className="margin-null"></input>
+                      <input
+                        type="checkbox"
+                        id="small"
+                        checked={selectedSize === "small"}
+                        onChange={() =>
+                          handleCheckBoxChange("small", "640x960")
+                        }
+                        className="margin-null"
+                      ></input>
                     </div>
                     <div className="flex-container-space size-border column-gap-10 ">
                       <p className="font-weight-400 font-13 size-color flex-1">
@@ -52,7 +75,15 @@ function ImageDetailDialog() {
                       </p>
                       <p className="font-weight-700 font-13">1920x2660</p>
 
-                      <input type="checkbox" className="margin-null"></input>
+                      <input
+                        type="checkbox"
+                        id="medium"
+                        checked={selectedSize === "medium"}
+                        onChange={() =>
+                          handleCheckBoxChange("medium", "1920x2660")
+                        }
+                        className="margin-null"
+                      ></input>
                     </div>
                     <div className="flex-container-space size-border column-gap-10 ">
                       <p className="font-weight-400 font-13 size-color flex-1">
@@ -60,7 +91,15 @@ function ImageDetailDialog() {
                       </p>
                       <p className="font-weight-700 font-13">2400x3600</p>
 
-                      <input type="checkbox" className="margin-null"></input>
+                      <input
+                        type="checkbox"
+                        id="big"
+                        checked={selectedSize === "big"}
+                        onChange={() =>
+                          handleCheckBoxChange("big", "2400x3600")
+                        }
+                        className="margin-null"
+                      ></input>
                     </div>
                     <div className="flex-container-space size-border column-gap-10 lower-border-radius">
                       <p className="font-weight-400 font-13 size-color flex-1">
@@ -68,12 +107,27 @@ function ImageDetailDialog() {
                       </p>
                       <p className="font-weight-700 font-13">3850x5640</p>
 
-                      <input type="checkbox" className="margin-null"></input>
+                      <input
+                        type="checkbox"
+                        id="orignal"
+                        checked={selectedSize === "orignal"}
+                        onChange={() =>
+                          handleCheckBoxChange("orignal", "3850x5640")
+                        }
+                        className="margin-null"
+                      ></input>
                     </div>
                   </section>
-                  <button className="text-colot-white download-button ">
+
+                  <a
+                    className="text-colot-white download-button font-weight-600 font-13 flex-container-center"
+                    href={previewURL}
+                    download
+                    target="blank"
+                    onClick={handleDownload}
+                  >
                     Download For Free!
-                  </button>
+                  </a>
                 </div>
                 <div>
                   <p className="font-weight-500 font-22  margin-bottom">

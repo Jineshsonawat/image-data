@@ -69,14 +69,18 @@ function ShowDialog() {
 }
 
 function HomeDialog() {
+  const { handleKeywordClick } = useMain();
   return (
     <dialog open className="dialog">
-      <div className="dialog-navbar flex-container-center column-gap-15">
+      <div className="dialog-navbar flex-container-center column-gap-16">
         {searchKeywords.map((keyword) => {
           return (
-            <p className="keyword font-weight-500 font-13 flex-container-center">
+            <button
+              onClick={handleKeywordClick}
+              className="keyword font-weight-500 font-13 flex-container-center"
+            >
               {keyword}
-            </p>
+            </button>
           );
         })}
       </div>
