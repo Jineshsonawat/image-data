@@ -19,7 +19,7 @@ function HomeSearchBar() {
           className="flex-1 transparent-input"
         />
         <button
-          onClick={onClickSearchButton}
+          onClick={(_) => onClickSearchButton(userValue)}
           className="border-button-go text-colot-white font-18 font-weight-600"
         >
           GO!

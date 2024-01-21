@@ -7,8 +7,10 @@ function ImageDetailDialog() {
   const [isSelected, setIsSelected] = useState(true);
   const {
     id,
+    webformatURL,
     largeImageURL,
-    previewURL,
+    fullHDURL,
+    imageURL,
     tags,
     user,
     user_id,
@@ -31,10 +33,14 @@ function ImageDetailDialog() {
   }
 
   function setDownloadUrl() {
-    if (selectedSize === "small" || selectedSize === "medium") {
-      return previewURL;
-    } else if (selectedSize === "big" || selectedSize === "orignal") {
+    if (selectedSize === "small") {
+      return webformatURL;
+    } else if (selectedSize === "medium") {
       return largeImageURL;
+    } else if (selectedSize === "big") {
+      return fullHDURL;
+    } else if (selectedSize === "orignal") {
+      return imageURL;
     } else {
       return null;
     }

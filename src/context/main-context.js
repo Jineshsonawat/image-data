@@ -18,22 +18,25 @@ function MainProvider({ children }) {
   }
 
   function handleKeywordClick(event) {
-    setUserValue(event.target.innerHTML);
+    setUserValue(event.target.innerText);
+    onClickSearchButton(event.target.innerText);
   }
 
-  function onClickSearchButton() {
+  function onChangeinputValue(event) {
+    setUserValue(event.target.value);
+  }
+
+  function onClickSearchButton(searchStr) {
     showLoader("loading");
     setBooleanValue(false);
-    setShowUserValue(userValue);
+    setShowUserValue(searchStr);
     setUserValue("");
 
     const key = process.env.REACT_APP_PIXABAY_API_KEY;
-
-    console.log(key);
     const url =
       "https://pixabay.com/api/" +
       `?key=${key}` +
-      `&q=${userValue}` +
+      `&q=${searchStr}` +
       `&per_page=6`;
 
     try {
@@ -49,10 +52,6 @@ function MainProvider({ children }) {
     } catch (error) {
       showLoader("failed");
     }
-  }
-
-  function onChangeinputValue(event) {
-    setUserValue(event.target.value);
   }
 
   return (
