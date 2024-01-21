@@ -21,7 +21,7 @@ function ShowDialog() {
     if (imageDataFromApi.length > 0) {
       return (
         <>
-          <div className="dialog-section flex-container-row flex-wrap row-gap-20 column-gap-45">
+          <div className="dialog-section flex-container-center flex-wrap row-gap-20 column-gap-45">
             {imageDataFromApi.map((item) => {
               const { previewURL, tags } = item;
               const tagValue = tags.split(",");
