@@ -4,7 +4,7 @@ import { useMain } from "../../context/main-context";
 function ImageDetailDialog() {
   const { clickToViewDetails, imageDetail } = useMain();
   const [selectedSize, setSelectedSize] = useState(null);
-
+  const [isSelected, setIsSelected] = useState(true);
   const {
     id,
     largeImageURL,
@@ -23,12 +23,37 @@ function ImageDetailDialog() {
   function handleCheckBoxChange(size) {
     if (selectedSize === size) {
       setSelectedSize(null);
+      setIsSelected(true);
     } else {
       setSelectedSize(size);
+      setIsSelected(false);
     }
   }
 
-  function handleDownload() {}
+  function setDownloadUrl() {
+    if (selectedSize === "small" || selectedSize === "medium") {
+      return previewURL;
+    } else if (selectedSize === "big" || selectedSize === "orignal") {
+      return largeImageURL;
+    } else {
+      return null;
+    }
+  }
+
+  function handleDownload(imageUrl) {
+    fetch(imageUrl)
+      .then((response) => response.blob())
+      .then((blob) => {
+        const url = window.URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = "image.jpg";
+        document.body.appendChild(a);
+        a.click();
+        window.URL.revokeObjectURL(url);
+      })
+      .catch((error) => console.error("Error downloading image:", error));
+  }
 
   return (
     <>
@@ -119,18 +144,20 @@ function ImageDetailDialog() {
                     </div>
                   </section>
 
-                  <a
-                    className="text-colot-white download-button font-weight-600 font-13 flex-container-center"
-                    href={previewURL}
-                    download
-                    target="blank"
-                    onClick={handleDownload}
+                  <button
+                    className={
+                      !isSelected
+                        ? "text-colot-white download-button font-weight-600 font-13 flex-container-center download-button-color"
+                        : "text-colot-white download-button font-weight-600 font-13 flex-container-center disable-download-button-color"
+                    }
+                    disabled={isSelected}
+                    onClick={() => handleDownload(setDownloadUrl())}
                   >
                     Download For Free!
-                  </a>
+                  </button>
                 </div>
                 <div>
-                  <p className="font-weight-500 font-22  margin-bottom">
+                  <p className="font-weight-500 font-22 margin-null  ">
                     Information
                   </p>
                   <section className=" image-api-data flex-container-space flex-wrap row-gap-20 ">
