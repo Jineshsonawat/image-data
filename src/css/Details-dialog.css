@@ -1,0 +1,88 @@
+/* Dialog */
+.image-details {
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100vw;
+  height: 1100px;
+  padding: 0;
+  border: none;
+  z-index: 1;
+}
+
+.image-details-dialog {
+  margin: 40px 40px;
+  border-radius: 9px;
+  background-color: rgba(255, 255, 255, 1);
+  box-shadow: 0px 3.5542078018188477px 3.5542078018188477px 0px
+    rgba(0, 0, 0, 0.25);
+  height: 65%;
+  width: 94%;
+}
+
+/* Navbar */
+.image-details-navbar {
+  background-color: rgba(245, 245, 245, 1);
+  height: 10%;
+  padding: 0px 35px;
+}
+
+.close-button {
+  border-radius: 5px;
+  border: 2px solid rgba(59, 64, 67, 1);
+  height: 29px;
+  width: 29px;
+  color: rgba(59, 64, 67, 1);
+}
+
+/* Section */
+
+/* Image */
+.image-details-section {
+  padding: 0px 35px;
+  margin-top: 40px;
+  margin-bottom: 30px;
+}
+
+.large-dialog-image {
+  width: 920px;
+  height: 500px;
+  border-radius: 0.7rem;
+}
+
+/* Details */
+
+/* Input - Size */
+.image-details-section-data {
+  margin: 0px 10px 0px 30px;
+}
+
+.size-border {
+  border: 0.89px solid rgba(222, 232, 244, 1);
+  width: 330px;
+  padding: 0px 10px;
+}
+
+.upper-border-radius {
+  border-radius: 9px 9px 0 0;
+}
+
+.lower-border-radius {
+  border-radius: 0px 0px 9px 9px;
+}
+
+/* button */
+
+.download-button {
+  border: none;
+  border-radius: 5px;
+  width: 350px;
+  height: 42px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Image data */
+
+.image-api-data {
+  width: 350px;
+  height: 110px;
+}

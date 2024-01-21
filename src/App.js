@@ -1,4 +1,8 @@
-import "./App.css";
+import "./css/App.css";
+import "./css/Home.css";
+import "./css/Dialog.css";
+import "./css/Details-dialog.css";
+
 import { HomeDialog } from "./components/HomePage/HomeDialog";
 import { HomeHeading } from "./components/HomePage/HomeHeading";
 import { HomeNavBar } from "./components/HomePage/HomeNavBar";

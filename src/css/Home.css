@@ -1,0 +1,105 @@
+/* Navbar */
+.navbar {
+  background-color: rgba(217, 217, 217, 0.12);
+  border-radius: 0.9rem;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  width: 90%;
+  height: 6.8rem;
+  margin: 4rem 3rem 0rem 3rem;
+  padding: 0rem 4rem;
+  box-shadow: -3.929967164993286px 3.929967164993286px 3.929967164993286px 0px
+      rgba(255, 255, 255, 0.43) inset,
+    3.929967164993286px -3.929967164993286px 3.929967164993286px 0px rgba(
+        182,
+        182,
+        182,
+        0.43
+      ) inset;
+}
+
+.border {
+  border: 0.25rem solid rgba(255, 255, 255, 1);
+  border-radius: 0.9rem;
+  padding: 0.75rem 1.4rem;
+  background-color: transparent;
+}
+
+/* Heading */
+
+.heading-text {
+  max-width: 60%;
+  margin-top: 8rem;
+}
+
+/* Search Bar */
+
+.search-bar {
+  background-color: rgba(217, 217, 217, 0.12);
+  border-radius: 0.9rem;
+  width: 45%;
+  height: 2.8rem;
+  padding: 2rem 2rem;
+  margin-top: 6rem;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: -3.942500114440918px 3.942500114440918px 3.942500114440918px 0px
+      rgba(255, 255, 255, 0.43) inset,
+    3.942500114440918px -3.942500114440918px 3.942500114440918px 0px rgba(
+        182,
+        182,
+        182,
+        0.43
+      ) inset;
+}
+
+.transparent-input {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  border-left: 2px solid #ffffff;
+  height: 3.5rem;
+  padding: 0rem 1.5rem;
+  color: #ffffff;
+  font-size: 1.8rem;
+}
+
+.transparent-input::placeholder {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.border-button-go {
+  border: 0.25rem solid rgba(255, 255, 255, 1);
+  height: 3.5rem;
+  border-radius: 0.9rem;
+  padding: 0rem 1.6rem;
+  background-color: transparent;
+}
+
+/* Result */
+
+.status {
+  margin-top: 4rem;
+}
+/* Suggestion Bar */
+
+.suggestion {
+  background-color: rgba(217, 217, 217, 0.12);
+  border-radius: 0.9rem;
+  margin-top: 2rem;
+  padding: 0rem 2.5rem;
+  height: 4rem;
+  width: fit-content;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: -3.942500114440918px 3.942500114440918px 3.942500114440918px 0px
+      rgba(255, 255, 255, 0.43) inset,
+    3.942500114440918px -3.942500114440918px 3.942500114440918px 0px rgba(
+        182,
+        182,
+        182,
+        0.43
+      ) inset;
+}

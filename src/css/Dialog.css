@@ -1,0 +1,53 @@
+.dialog {
+  background-color: rgba(255, 255, 255, 1);
+  margin-top: 4rem;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border: none;
+  border-radius: 0.9rem;
+}
+
+/* Navbar */
+.dialog-navbar {
+  background-color: rgba(245, 245, 245, 1);
+  width: 100%;
+  height: 80px;
+}
+
+.keyword {
+  border: 1.06px solid rgba(209, 209, 209, 1);
+  border-radius: 4px;
+  color: rgba(118, 118, 118, 1);
+  background-color: transparent;
+  min-width: 135px;
+  height: 35px;
+  padding: 0rem 5px;
+}
+
+/* Section */
+
+.dialog-section {
+  margin: 5rem 4.3rem;
+}
+
+/* Image  */
+
+.small-dialog-image {
+  width: 420px;
+  height: 240px;
+  border-radius: 0.7rem;
+}
+
+/* Image Tags */
+.tags {
+  width: 420px;
+}
+
+.tags-style {
+  color: rgba(118, 118, 118, 1);
+  background-color: rgba(245, 245, 245, 1);
+  padding: 0px 7.25px 0px 7.1px;
+  height: 24px;
+  margin: 5px 0px;
+}

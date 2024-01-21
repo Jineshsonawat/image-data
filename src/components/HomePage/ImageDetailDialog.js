@@ -88,9 +88,7 @@ function ImageDetailDialog() {
                         type="checkbox"
                         id="small"
                         checked={selectedSize === "small"}
-                        onChange={() =>
-                          handleCheckBoxChange("small", "640x960")
-                        }
+                        onChange={() => handleCheckBoxChange("small")}
                         className="margin-null"
                       ></input>
                     </div>
@@ -104,9 +102,7 @@ function ImageDetailDialog() {
                         type="checkbox"
                         id="medium"
                         checked={selectedSize === "medium"}
-                        onChange={() =>
-                          handleCheckBoxChange("medium", "1920x2660")
-                        }
+                        onChange={() => handleCheckBoxChange("medium")}
                         className="margin-null"
                       ></input>
                     </div>
@@ -120,9 +116,7 @@ function ImageDetailDialog() {
                         type="checkbox"
                         id="big"
                         checked={selectedSize === "big"}
-                        onChange={() =>
-                          handleCheckBoxChange("big", "2400x3600")
-                        }
+                        onChange={() => handleCheckBoxChange("big")}
                         className="margin-null"
                       ></input>
                     </div>
@@ -136,9 +130,7 @@ function ImageDetailDialog() {
                         type="checkbox"
                         id="orignal"
                         checked={selectedSize === "orignal"}
-                        onChange={() =>
-                          handleCheckBoxChange("orignal", "3850x5640")
-                        }
+                        onChange={() => handleCheckBoxChange("orignal")}
                         className="margin-null"
                       ></input>
                     </div>
