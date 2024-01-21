@@ -27,7 +27,9 @@ function MainProvider({ children }) {
     setShowUserValue(userValue);
     setUserValue("");
 
-    const key = "41913448-6fe0696dc3241e44a8839e52f";
+    const key = process.env.REACT_APP_PIXABAY_API_KEY;
+
+    console.log(key);
     const url =
       "https://pixabay.com/api/" +
       `?key=${key}` +
